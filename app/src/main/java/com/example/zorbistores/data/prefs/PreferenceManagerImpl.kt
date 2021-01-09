@@ -22,6 +22,14 @@ open class PreferenceManagerImpl(private val prefs: SharedPreferences):Preferenc
         prefs[IS_PASSWORD]=password
     }
 
+    override fun setImage(image: String) {
+        prefs[IS_IMAGE_URI]=image
+    }
+
+    override fun getImage(): String {
+        return prefs[IS_IMAGE_URI]?:""
+    }
+
     override fun setCustomerId(customerId: Int?) {
         prefs[IS_CUSTOMER_ID]=customerId
     }

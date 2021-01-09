@@ -99,5 +99,8 @@
     <string name="shipping">Shipping</string>
     <string name="shipping_charge">Shipping Charge</string>
     <string name="_100">100</string>
+    <string name="choose_image_from">Choose image from</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
 
 </resources>

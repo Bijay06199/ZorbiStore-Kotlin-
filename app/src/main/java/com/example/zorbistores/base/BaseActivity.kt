@@ -1,6 +1,7 @@
 package com.example.zorbistores.base
 
 
+import android.app.Dialog
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.annotation.LayoutRes
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.example.zorbistores.BR
+import com.example.zorbistores.R
 import com.example.zorbistores.utils.setupUI
 import io.paperdb.Paper
 import org.koin.android.ext.android.inject
@@ -17,6 +19,7 @@ abstract class BaseActivity<DATA_BINDING : ViewDataBinding, VIEW_MODEL : BaseVie
     lateinit var viewDataBinding: DATA_BINDING
     private var baseViewModel: VIEW_MODEL? = null
     val preferenceManager: com.example.zorbistores.data.prefs.PreferenceManager by inject()
+    lateinit var dialog:Dialog
 
 
 
@@ -57,6 +60,20 @@ abstract class BaseActivity<DATA_BINDING : ViewDataBinding, VIEW_MODEL : BaseVie
      */
 
     open fun getBindingVariable(): Int= BR.viewModel
+
+
+    fun setUpDialogCamera() {
+        with(viewDataBinding){
+            dialog= Dialog(this@BaseActivity)
+            dialog.setContentView(R.layout.choose_image_popup)
+
+            dialog.show()
+
+
+
+
+        }
+    }
 
 
 

@@ -12,3 +12,5 @@ const val IS_ADDRESS="is_address"
 const val IS_PRODUCT_ID="is_product_id"
 const val IS_QUANTITY="is_quantity"
 const val IS_ORDER_DETAILS="is_order_details"
+const val IS_IMAGE_URI="is_image_uri"
+

@@ -27,6 +27,8 @@ interface PreferenceManager {
     fun getQuantity():Int
     fun setOrderDetails(order:List<LineItem>)
     fun getOrderDetails():List<LineItem>
+    fun setImage(image:String)
+    fun getImage():String
 
 
 

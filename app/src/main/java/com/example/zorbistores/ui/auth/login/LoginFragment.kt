@@ -18,6 +18,7 @@ import com.example.zorbistores.ui.auth.login.response.CustomerResponse
 import com.example.zorbistores.ui.auth.register.RegisterNameActivity
 import com.example.zorbistores.ui.main.MainActivity
 import com.example.zorbistores.utils.AuthListenerInfo
+import com.example.zorbistores.utils.bindings.GlideApp
 import com.example.zorbistores.utils.extentions.dangerFlashBar
 import com.example.zorbistores.utils.extentions.infoFlashBar
 import com.example.zorbistores.utils.extentions.successFlashBar
@@ -128,6 +129,11 @@ class LoginFragment() : BaseFragment<FragmentLoginBinding, LoginViewModel>(), Au
     }
 
     private fun initView() {
+
+        GlideApp.with(this)
+            .load(preferenceManager.getImage())
+            .placeholder(R.drawable.profile_placeholder)
+            .into(viewDataBinding.ivPerson)
 
 
         loginViewModel.authListenerInfo = this
